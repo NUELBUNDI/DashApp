@@ -36,8 +36,8 @@ app.layout = html.Div([
     # Range Slider
     html.H5('3. Range Slider'),
     dcc.RangeSlider(
-        min=df['total_bill'].min(),
-        max =df['total_bill'].max(),
+        min=40,
+        max =50,
         step = 2
     ),
     # Input 

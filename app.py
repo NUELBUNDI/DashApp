@@ -1,16 +1,11 @@
 # Import package
 
 from dash import Dash , dcc , html # dcc .> dash core components
-
 from datetime import date
 
 
-
-# Get data
-df = px.data.tips()
-
-gender_type = df['sex'].unique().tolist()
-time_type =        df['time'].unique().tolist()
+gender_type =     ['Male','female']
+time_type =        ['Dinner','Lunch']
 
 # Create an instance of dash class
 app = Dash()
@@ -27,14 +22,14 @@ app.layout = html.Div([
     # Drop Down
     html.H5('1 Drop Down'),
     dcc.Dropdown(options=gender_type,
-                 value =gender_type[1],
+                 value = gender_type[1],
                  multi= True
                  ),
     
     # Slider
     html.H5('2 Slider'),
-    dcc.Slider(min  = df['total_bill'].min(), 
-               max  = df['total_bill'].max(), 
+    dcc.Slider(min  = 40, 
+               max  = 50, 
                step =5
                ),
     

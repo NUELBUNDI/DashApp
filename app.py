@@ -15,6 +15,8 @@ time_type =        df['time'].unique().tolist()
 # Create an instance of dash class
 app = Dash()
 
+app = app.server   # 
+
 # Layout
 
 app.layout = html.Div([
